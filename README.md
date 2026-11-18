@@ -215,4 +215,4 @@ Nella cartella [`doc/`](doc/) sono disponibili i documenti di progettazione e l'
 ## Autore
 
 - **Francesco Cirigliano** (Mat. `1163662`)
-  Progetto per l'esame di *Programmazione ad Oggetti (PAO)* — Corso di Laurea in Informatica (Giugno 2025).
+  Progetto per l'esame di *Programmazione ad Oggetti (PAO)* — Corso di Laurea in Informatica.
