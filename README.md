@@ -88,12 +88,7 @@ Il progetto è stato progettato ponendo particolare attenzione alla **qualità a
 
 ## Modello dei Dati
 
-Alla base della gerarchia si trova la classe astratta pura `Media::AbstractMedia`, da cui derivano tre classi concrete.
-
-<div align="center">
-  <img src="doc/Modello_Logico.png" alt="Diagramma UML del Modello Logico" width="850" />
-  <p><em>Figura 1 — Diagramma UML del modello logico di MediaVerse.</em></p>
-</div>
+Alla base della gerarchia si trova la classe astratta pura `Media::AbstractMedia`, da cui derivano tre classi concrete (`Book`, `Film` e `Song`). Lo schema UML completo del modello è consultabile nel file [`doc/Modello_Logico.png`](doc/Modello_Logico.png).
 
 | Classe | Attributi Comuni (`AbstractMedia`) | Attributi Specifici | Note Progettuali |
 | :--- | :--- | :--- | :--- |
@@ -105,38 +100,7 @@ Alla base della gerarchia si trova la classe astratta pura `Media::AbstractMedia
 
 ## Architettura e Design Pattern
 
-Il software adotta il pattern architetturale **Model-View-Controller (MVC)** combinato con diversi design pattern classici per massimizzare modularità e manutenibilità:
-
-```mermaid
-flowchart LR
-    subgraph View ["View (Qt Widgets + QSS)"]
-        MW["MainWindow"]
-        EW["EditWidget & ItemEditors"]
-        GR["Grid"]
-        MR["MediaRender (Card / Full / FilterRender)"]
-    end
-
-    subgraph Controller ["Controller"]
-        CTRL["Controller::Controller"]
-    end
-
-    subgraph Model ["Model & Persistence (C++ Standard + JSON)"]
-        AM["AbstractMedia (Book, Film, Song)"]
-        REPO["JsonRepository (MRepository)"]
-        CONV["Json / JsonVisitor / JsonReader"]
-        DM["JsonFile (DataMapper)"]
-    end
-
-    MW <-->|Signals & Slots| CTRL
-    EW <-->|Signals & Slots| CTRL
-    CTRL --> GR
-    GR --> MR
-    MR -.->|ConstVisitor| AM
-    CTRL --> REPO
-    REPO --> DM
-    DM --> CONV
-    CONV -.->|ConstVisitor| AM
-```
+Il software adotta il pattern architetturale **Model-View-Controller (MVC)** combinato con diversi design pattern classici per massimizzare modularità e manutenibilità (vedi lo schema del modello logico in [`doc/Modello_Logico.png`](doc/Modello_Logico.png) e il dettaglio progettuale in [`doc/Relazione.pdf`](doc/Relazione.pdf)).
 
 ### Principali Design Pattern Implementati
 
