@@ -12,22 +12,23 @@
 [![Qt](https://img.shields.io/badge/Qt-5%20%7C%206-41CD52?style=for-the-badge&logo=qt&logoColor=white)](https://www.qt.io/)
 [![Build](https://img.shields.io/badge/Build-qmake-232F3E?style=for-the-badge&logo=gnu&logoColor=white)](#compilazione-ed-esecuzione)
 [![Architecture](https://img.shields.io/badge/Pattern-MVC%20%2B%20Visitor-7952B3?style=for-the-badge)](#architettura-e-design-pattern)
+[![Valutazione](https://img.shields.io/badge/Valutazione-Lode-2EA44F?style=for-the-badge)](doc/CIRIGLIANO%20FRANCESCO.txt)
 
 *Progetto sviluppato per il corso di **Programmazione ad Oggetti (PAO)** — Laurea in Informatica (Giugno 2025)*
 
-[Screenshot](#-galleria-screenshot) •
-[Caratteristiche](#-caratteristiche-principali) •
-[Modello dei Dati](#-modello-dei-dati) •
-[Architettura e Pattern](#-architettura-e-design-pattern) •
-[Struttura del Progetto](#-struttura-del-progetto) •
-[Compilazione](#-compilazione-ed-esecuzione) •
-[Documentazione](#-documentazione)
+[Screenshot](#galleria-screenshot) •
+[Caratteristiche](#caratteristiche-principali) •
+[Modello dei Dati](#modello-dei-dati) •
+[Architettura e Pattern](#architettura-e-design-pattern) •
+[Struttura del Progetto](#struttura-del-progetto) •
+[Compilazione](#compilazione-ed-esecuzione) •
+[Documentazione ed Esito](#documentazione-ed-esito)
 
 </div>
 
 ---
 
-## 📖 Panoramica
+## Panoramica
 
 **MediaVerse** è un'applicazione desktop scritta in **C++** con il framework grafico **Qt** che consente di organizzare, catalogare e tracciare la propria collezione multimediale personale. Permette di creare, modificare, eliminare, cercare e contrassegnare come completati tre tipi di contenuti multimediali: **Libri**, **Film** e **Brani Musicali**.
 
@@ -37,7 +38,7 @@ Il progetto è stato progettato ponendo particolare attenzione alla **qualità a
 
 ---
 
-## 📸 Galleria Screenshot
+## Galleria Screenshot
 
 <div align="center">
   <img src="doc/screenshots/home.png" alt="Schermata Home di MediaVerse" width="900" />
@@ -60,7 +61,7 @@ Il progetto è stato progettato ponendo particolare attenzione alla **qualità a
 
 ---
 
-## ✨ Caratteristiche Principali
+## Caratteristiche Principali
 
 ### Gestione della Collezione e Persistenza
 - **Operazioni CRUD complete**: creazione, visualizzazione (in scheda sintetica o pagina dettagliata), modifica ed eliminazione di `Book`, `Film` e `Song`.
@@ -85,7 +86,7 @@ Il progetto è stato progettato ponendo particolare attenzione alla **qualità a
 
 ---
 
-## 🗂️ Modello dei Dati
+## Modello dei Dati
 
 Alla base della gerarchia si trova la classe astratta pura `Media::AbstractMedia`, da cui derivano tre classi concrete.
 
@@ -102,7 +103,7 @@ Alla base della gerarchia si trova la classe astratta pura `Media::AbstractMedia
 
 ---
 
-## 🏗️ Architettura e Design Pattern
+## Architettura e Design Pattern
 
 Il software adotta il pattern architetturale **Model-View-Controller (MVC)** combinato con diversi design pattern classici per massimizzare modularità e manutenibilità:
 
@@ -159,11 +160,12 @@ flowchart LR
 
 ---
 
-## 📁 Struttura del Progetto
+## Struttura del Progetto
 
 ```text
 MediaVerse/
 ├── doc/
+│   ├── CIRIGLIANO FRANCESCO.txt    # Esito e feedback di valutazione del progetto (Valutazione: Lode)
 │   ├── Modello_Logico.png          # Diagramma UML della gerarchia del modello
 │   ├── Relazione.pdf               # Relazione tecnica completa del progetto (PAO)
 │   └── screenshots/                # Screenshot dell'applicazione (Home, Grid, Full, Editor)
@@ -203,7 +205,7 @@ MediaVerse/
 
 ---
 
-## 🚀 Compilazione ed Esecuzione
+## Compilazione ed Esecuzione
 
 ### Prerequisiti
 - Compilatore C++ con supporto a **C++11** o superiore (`g++`, `clang++` o `MSVC`)
@@ -213,7 +215,7 @@ MediaVerse/
 ### Metodo 1: Tramite Qt Creator (Consigliato)
 1. Clona il repository:
    ```bash
-   git clone https://github.com/<tuo-username>/MediaVerse.git
+   git clone https://github.com/FrancescoCirigliano/MediaVerse.git
    cd MediaVerse
    ```
 2. Apri **Qt Creator** e seleziona **File → Open File or Project...**
@@ -231,21 +233,22 @@ Una volta completata la compilazione, avvia l'eseguibile generato (`./MediaVerse
 
 ### Caricare il Dataset di Esempio
 All'avvio dell'applicazione:
-1. Clicca sul pulsante **Importa / Carica** nella barra laterale (o nella schermata iniziale).
+1. Clicca sul pulsante **Importa / Carica** nella barra superiore.
 2. Seleziona il file `src/dataset.json`.
 3. Per visualizzare correttamente le copertine del dataset di esempio, assicurati che la cartella `dataset/` sia raggiungibile rispetto alla working directory dell'eseguibile (oppure copia la cartella `src/dataset` nella directory di build).
 
 ---
 
-## 📄 Documentazione
+## Documentazione ed Esito
 
-Nella cartella [`doc/`](doc/) sono disponibili i documenti di progettazione realizzati per l'esame:
-- 📘 [**Relazione Tecnica (`doc/Relazione.pdf`)**](doc/Relazione.pdf): approfondimento sulle scelte progettuali, sul polimorfismo tramite Visitor, sulla persistenza JSON, sull'interfaccia grafica e sul consuntivo ore.
-- 🖼️ [**Modello Logico UML (`doc/Modello_Logico.png`)**](doc/Modello_Logico.png): schema UML ad alta risoluzione delle classi del dominio e delle interfacce `Visitor` / `ConstVisitor`.
+Nella cartella [`doc/`](doc/) sono disponibili i documenti di progettazione e l'esito della valutazione d'esame:
+- [**Relazione Tecnica (`doc/Relazione.pdf`)**](doc/Relazione.pdf): approfondimento sulle scelte progettuali, sul polimorfismo tramite Visitor, sulla persistenza JSON, sull'interfaccia grafica e sul consuntivo ore.
+- [**Modello Logico UML (`doc/Modello_Logico.png`)**](doc/Modello_Logico.png): schema UML ad alta risoluzione delle classi del dominio e delle interfacce `Visitor` / `ConstVisitor`.
+- [**Esito e Valutazione (`doc/CIRIGLIANO FRANCESCO.txt`)**](doc/CIRIGLIANO%20FRANCESCO.txt): scheda ufficiale di valutazione del progetto d'esame (**Valutazione: Lode**), con il dettaglio sul soddisfacimento dei vincoli, orientamento agli oggetti, funzionalità e GUI.
 
 ---
 
-## 👤 Autore
+## Autore
 
 - **Francesco Cirigliano** (Mat. `1163662`)
   Progetto per l'esame di *Programmazione ad Oggetti (PAO)* — Corso di Laurea in Informatica (Giugno 2025).
