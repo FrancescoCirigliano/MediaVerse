@@ -1,0 +1,253 @@
+/* Stile del contenitore principale (come .modal-container) */
+#createWidget {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+                                stop:0 #667eea, stop:1 #764ba2);
+}
+
+/* Sezione sinistra per l'anteprima */
+#previewSection {
+    background: rgba(0, 0, 0, 0.1);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Stato vuoto (con bordo tratteggiato) */
+#previewContainer[hasImage="false"] {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+                                stop:0 rgba(255, 255, 255, 0.2), stop:1 rgba(255, 255, 255, 0.05));
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    font-weight: 500;
+}
+/* Stato con immagine caricata (senza bordo/sfondo) */
+#previewContainer[hasImage="true"] {
+    border: none;
+    background: transparent;
+}
+
+
+/* Bottone di upload sotto l'anteprima */
+#uploadButton {
+    background: rgba(76, 175, 80, 0.2);
+    border: 1px solid rgba(76, 175, 80, 0.4);
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+}
+#uploadButton:hover {
+    background: rgba(76, 175, 80, 0.3);
+}
+
+/* Sezione destra per il form */
+#formSection {
+    padding: 20px;
+}
+
+#formScrollArea {
+    border: none;
+    background: transparent;
+}
+#formScrollArea > QWidget > QWidget {
+    background: transparent;
+}
+
+/* Contenitore dei tabs */
+#tabsContainer {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 5px;
+}
+
+/* Stile dei bottoni-tab */
+QPushButton.tabButton {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+}
+QPushButton.tabButton:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+QPushButton.tabButton:checked {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+/* Regola di stile raggruppata per TUTTE le etichette del form */
+QLabel.formLabel,
+#customFieldsContainer QLabel {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding-bottom: 8px;
+}
+
+/* Stile degli input generici */
+QLineEdit, QSpinBox, QPlainTextEdit, QComboBox, QTimeEdit {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 12px 15px;
+    color: #fff;
+    font-size: 14px;
+    min-height: 20px;
+}
+QLineEdit:focus, QSpinBox:focus, QPlainTextEdit:focus, QComboBox:focus, QTimeEdit:focus {
+    border-color: rgba(76, 175, 80, 0.5);
+}
+
+
+/* ================================================================== */
+/* === SEZIONE CORRETTA PER SPINBOX, CHECKBOX, COMBOBOX CON RISORSE === */
+/* ================================================================== */
+
+/* --- SPINBOX e TIMEEDIT CORRETTI con Risorse --- */
+/* Nota: QTimeEdit eredita lo stile di QAbstractSpinBox, come QSpinBox */
+QSpinBox, QTimeEdit {
+    padding-right: 5px;
+}
+QSpinBox::up-button, QSpinBox::down-button,
+QTimeEdit::up-button, QTimeEdit::down-button {
+    subcontrol-origin: border;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    width: 22px;
+}
+QSpinBox::up-button, QTimeEdit::up-button {
+    subcontrol-position: top right;
+    border-top-right-radius: 12px;
+}
+QSpinBox::down-button, QTimeEdit::down-button {
+    subcontrol-position: bottom right;
+    border-bottom-right-radius: 12px;
+}
+QSpinBox::up-button:hover, QSpinBox::down-button:hover,
+QTimeEdit::up-button:hover, QTimeEdit::down-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+QSpinBox::up-arrow, QTimeEdit::up-arrow {
+    image: url(:/assets/icon/arrow_up.svg);
+    width: 10px;
+    height: 10px;
+}
+QSpinBox::down-arrow, QTimeEdit::down-arrow {
+    image: url(:/assets/icon/arrow_down.svg);
+    width: 10px;
+    height: 10px;
+}
+
+
+/* --- CHECKBOX CORRETTO con Risorse --- */
+QCheckBox {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    spacing: 12px;
+}
+QCheckBox::indicator {
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    background: transparent;
+}
+QCheckBox::indicator:hover {
+    border-color: rgba(255, 255, 255, 0.5);
+}
+QCheckBox::indicator:checked {
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+    image: url(:/assets/icon/check_mark.svg);
+}
+
+
+/* --- COMBOBOX CORRETTO (Metodo più robusto) --- */
+QComboBox {
+    padding-right: 25px; /* Lascia spazio per il pulsante */
+}
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 25px;
+    
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+
+    image: url(:/assets/icon/arrow_down.svg);
+}
+QComboBox::drop-down:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+QComboBox QAbstractItemView {
+    background: #705b99;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    color: white;
+    selection-background-color: #667eea;
+}
+
+/* ================================================================== */
+
+/* Separatore orizzontale */
+#separator {
+    background-color: rgba(255, 255, 255, 0.1);
+    height: 1px;
+    border: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/* Nuovo stile per bottoni secondari come "Aggiungi Attore" */
+QPushButton.secondaryButton {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+}
+QPushButton.secondaryButton:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+
+/* Footer della finestra */
+#modalFooter {
+    background: rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    min-height: 40px;
+}
+
+/* Bottoni nel footer (Accetta/Annulla) */
+#btnSave, #btnCancel {
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: 600;
+}
+#btnSave {
+    background: rgba(76, 175, 80, 0.2);
+    border: 1px solid rgba(76, 175, 80, 0.4);
+}
+#btnSave:hover {
+    background: rgba(76, 175, 80, 0.3);
+}
+#btnCancel {
+    background: rgba(244, 67, 54, 0.2);
+    border: 1px solid rgba(244, 67, 54, 0.3);
+}
+#btnCancel:hover {
+    background: rgba(244, 67, 54, 0.3);
+}

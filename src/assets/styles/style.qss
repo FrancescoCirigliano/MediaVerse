@@ -1,0 +1,223 @@
+/* =================================================================== */
+/* == Stile Generale della Finestra                                 == */
+/* =================================================================== */
+
+QMainWindow {
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 #667eea, stop:1 #764ba2);
+}
+
+QLabel {
+    background-color: transparent;
+    color: white;
+}
+
+/* =================================================================== */
+/* == Header Bar (QToolBar orizzontale)                             == */
+/* =================================================================== */
+
+#HeaderBar {
+    background: rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    min-height: 45px;
+    padding: 8px 15px;
+    spacing: 0px;
+}
+
+#HeaderTitle {
+    font-size: 28px;
+    font-weight: 300;
+    color: #fff;
+    margin-right: 20px; 
+}
+
+#SearchBox {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 14px;
+    padding: 8px 16px;
+    color: white;
+    font-size: 14px;
+    margin-left: 20px;
+}
+#SearchBox:focus {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+#HeaderBar > QPushButton {
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    margin: 0px 6px;
+}
+
+#AddButton    { background-color: #4CAF50; }
+#EditButton { background-color: #FF9800; }
+#SaveButton   { background-color: #2196F3; }
+#DeleteButton { background-color: #f44336; }
+#ImportButton { background-color: #FF9800; }
+
+#AddButton:hover    { background-color: #45a049; }
+#SaveButton:hover   { background-color: #1976D2; }
+#EditButton:hover { background-color: #F57C00; }
+#DeleteButton:hover { background-color: #d32f2f; }
+#ImportButton:hover { background-color: #F57C00; }
+
+/* =================================================================== */
+/* == Sidebar (QToolBar verticale)                                  == */
+/* =================================================================== */
+
+#Sidebar {
+    background: rgba(0, 0, 0, 0.2);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    min-width: 280px;
+    max-width: 280px;
+    padding: 30px 0px;
+    spacing: 0px;
+}
+
+#SidebarTitle {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 15px 25px;
+    margin-bottom: 5px;
+}
+
+#Sidebar QLabel#filtersTitle {
+    margin-top: 25px;
+}
+
+#CategoryButton {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 15px 20px;
+    margin: 5px 25px;
+}
+
+#CategoryButton:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+#CategoryButton:pressed {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#CategoryButton[active="true"] {
+    background: rgba(76, 175, 80, 0.3);
+    border: 1px solid rgba(76, 175, 80, 0.5);
+}
+
+/* =================================================================== */
+/* == Contenuto Centrale (ScrollArea e Liste)                       == */
+/* =================================================================== */
+
+#SectionTitle {
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+    padding: 15px 40px 5px 40px;
+}
+
+QListWidget {
+    background-color: transparent;
+    border: none;
+    padding-left: 25px;
+    padding-right: 25px;
+    outline: 0;
+}
+
+/* Stile per ogni Cella/Item nella lista */
+QListWidget::item {
+    border: none;
+    /* La selezione qui disegnerà il rettangolo grande */
+    
+}
+
+QListWidget::item:selected {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+}
+
+
+/* =================================================================== */
+/* == La Card (il nostro QFrame personalizzato)                     == */
+/* =================================================================== */
+
+#CardWidget {
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+}
+
+/* L'hover lo lasciamo sulla card perché l'effetto è migliore */
+QListWidget::item:hover > #CardWidget {
+     background-color: rgba(255, 255, 255, 0.25);
+}
+
+
+/* =================================================================== */
+/* == Elementi Interni alla Card (i QLabel)                         == */
+/* =================================================================== */
+
+#CardCover {
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+}
+
+#CardCover[imageMissing="true"][mediaType="book"] { background-color: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #e74c3c, stop:1 #c0392b); }
+#CardCover[imageMissing="true"][mediaType="film"] { background-color: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #3498db, stop:1 #2980b9); }
+#CardCover[imageMissing="true"][mediaType="song"] { background-color: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #f39c12, stop:1 #e67e22); }
+
+#CardTitle {
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+}
+
+#CardAuthor {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    font-style: italic;
+}
+
+#CardMetaInfo {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+#CardStatusDot {
+    min-width: 8px;
+    max-width: 8px;
+    min-height: 8px;
+    max-height: 8px;
+    border-radius: 4px;
+}
+#CardStatusDot[read="true"] { background-color: #4CAF50; }
+#CardStatusDot[read="false"] { background-color: #ff6b6b; }
+
+#CardStatusText {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+}
+
+#CardStatusLayout {
+    padding-top: 40px;
+}
+
+// Full-View
+

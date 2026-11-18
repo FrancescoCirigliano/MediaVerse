@@ -1,0 +1,157 @@
+/* =================================================================== */
+/* == MediaHub - Stile per Viste Dettagliate (Libro, Film, Canzone) == */
+/* =================================================================== */
+
+/* Stili di base e colori condivisi */
+* {
+    color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+/* Card principale che contiene tutti i dettagli */
+#DetailCard {
+    background-color: rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+}
+
+/* =================================================================== */
+/* == Sezione Header (Copertina, Titolo, Info)                      == */
+/* =================================================================== */
+
+/* Copertina generica per Libri, Film e Canzoni */
+#CoverLabel {
+    border-radius: 12px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    qproperty-alignment: 'AlignCenter';
+    /* Sfondo di fallback se l'immagine non carica */
+    background-color: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #2c3e50, stop:1 #34495e);
+}
+
+/* Titolo generico (Libro, Film, Canzone) */
+#TitleLabel {
+    font-size: 42px;
+    font-weight: 700;
+    padding-bottom: 5px;
+}
+
+/* Autore/Regista/Artista generico */
+#AuthorLabel {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.9);
+    font-style: italic;
+    padding-bottom: 15px;
+}
+
+/* Indicatore di stato generico (Letto/Guardato/Ascoltato) */
+#StatusIndicator {
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 18px; 
+    padding: 8px 20px;
+    margin: 15px 0;
+}
+
+/* Stile per stato "Non completato" (isRead="false") */
+#StatusIndicator[isRead="false"] {
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Stile per stato "Completato" (isRead="true") */
+#StatusIndicator[isRead="true"] {
+    background-color: rgba(76, 175, 80, 0.3);
+    border: 2px solid rgba(76, 175, 80, 0.6);
+}
+
+/* =================================================================== */
+/* == Meta-Dati e Sezioni di Contenuto                              == */
+/* =================================================================== */
+
+/* Contenitore per ogni singolo meta-dato (Anno, Genere, etc.) */
+#MetaItem {
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 15px 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Etichetta (es. "Anno di Pubblicazione") */
+.MetaLabel { /* Selettore per property: [class="MetaLabel"] */
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    padding-bottom: 3px;
+}
+
+/* Valore (es. "2007") */
+.MetaValue { /* Selettore per property: [class="MetaValue"] */
+    font-size: 16px;
+    font-weight: 600;
+    padding-left: 0px;
+    padding-bottom: 5px;
+}
+
+/* Titolo delle sezioni (es. "Descrizione" per i libri, "Cast" per i film) */
+/* Questa regola si applica a entrambi gli ID, unificando lo stile. */
+#SectionTitleLabel, #castTitle {
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Box del testo della descrizione (SOLO PER I LIBRI) */
+#DescriptionLabel {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 12px;
+    border-left: 4px solid #4CAF50;
+}
+
+/* Sezione Cast (SOLO PER I FILM) */
+#actor-photo {
+    background-color: rgba(0,0,0,0.2);
+    border: 2px solid rgba(255,255,255,0.4);
+    border-radius: 40px; /* Metà della dimensione (80px) per creare un cerchio */
+}
+
+#actor-name {
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+
+/* =================================================================== */
+/* == Stili Specifici per Widget                                    == */
+/* =================================================================== */
+
+/* Stili per la CheckBox "Lossless" */
+QCheckBox#LosslessCheckbox::indicator {
+    width: 24px;  /* Dimensione più grande */
+    height: 24px;
+    border-radius: 6px;
+}
+
+/* Stato quando la checkbox è selezionata (attiva) e disabilitata */
+QCheckBox#LosslessCheckbox::indicator:checked:disabled {
+    background-color: #4CAF50; /* Verde acceso */
+    border: 2px solid #388E3C;     /* Bordo verde più scuro per contrasto */
+    
+    /* Usa l'icona SVG fornita per il segno di spunta */
+    /* Assicurati che il percorso nel tuo file .qrc sia corretto! */
+    image: url(:/assets/icon/check_mark.svg);
+}
+
+/* Stato quando la checkbox NON è selezionata e disabilitata */
+QCheckBox#LosslessCheckbox::indicator:disabled {
+     background-color: rgba(0, 0, 0, 0.2);
+     border: 2px solid rgba(255, 255, 255, 0.3);
+}

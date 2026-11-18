@@ -1,0 +1,25 @@
+<RCC>
+    <qresource prefix="/">
+        <file>assets/icon/file-import-solid.svg</file>
+        <file>assets/icon/floppy-disk-solid.svg</file>
+        <file>assets/icon/house-solid.svg</file>
+        <file>assets/icon/pencil-solid.svg</file>
+        <file>assets/icon/plus-solid.svg</file>
+        <file>assets/icon/trash-can-solid.svg</file>
+        <file>assets/icon/arrow_up.svg</file>
+        <file>assets/icon/arrow_down.svg</file>
+        <file>assets/icon/check_mark.svg</file>
+        <file>assets/icon/music-solid.svg</file>
+        <file>assets/icon/film-solid.svg</file>
+        <file>assets/icon/book-solid.svg</file>
+        <file>assets/image/blank_image.png</file>
+        <file>assets/image/logo.png</file>
+        <file>assets/image/actorPlaceHolder.png</file>
+        <file>assets/styles/style.qss</file>
+        <file>assets/styles/detailed_style.qss</file>
+        <file>assets/styles/edit_style.qss</file>
+        <file>assets/icon/save_new.svg</file>
+        <file>assets/icon/file-solid.svg</file>
+        <file>assets/icon/logo.png</file>
+    </qresource>
+</RCC>
